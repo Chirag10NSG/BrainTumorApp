@@ -2,10 +2,7 @@
   "files": [
     "meningioma.json",
     "glioblastoma.json",
-    "pituitary-tumor.json",
     "astrocytoma.json",
-    "oligodendroglioma.json",
-    "vestibular-schwannoma.json",
-    "medulloblastoma.json"
+    
   ]
 }
