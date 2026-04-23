@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <span class="brand-mark">BT</span>
+          <span class="brand-text">Brain Tumor Guide</span>
+        </nav>
+
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <p class="eyebrow" id="heroEyebrow">Patient-friendly education</p>
+            <h1 id="heroTitle">Understand brain tumor types in clear, calm language.</h1>
+            <p class="hero-text" id="heroDescription">
+              This starter app helps patients and families explore common brain
+              tumor diagnoses, symptoms, diagnosis, and treatment pathways. It
+              is educational only and should be used alongside advice from your
+              care team.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" id="primaryCta" href="#tumor-directory">
+                Explore tumor types
+              </a>
+              <a class="button button-secondary" id="secondaryCta" href="#care-guide">
+                What to ask your doctor
+              </a>
+            </div>
+          </section>
+
+          <aside class="hero-panel">
+            <div class="hero-stat">
+              <span class="stat-label" id="focusLabel">What this app focuses on</span>
+              <strong id="focusTitle">Plain-language summaries</strong>
+              <p id="focusDescription">
+                Fast explanations of what a tumor is, common symptoms, and how
+                treatment decisions are usually made.
+              </p>
+            </div>
+            <div class="hero-stat alert">
+              <span class="stat-label" id="urgentLabel">Get urgent help now if someone has</span>
+              <strong id="urgentTitle">new seizures, severe confusion, fainting, or rapid weakness</strong>
+              <p id="urgentDescription">
+                These symptoms can be an emergency. Call emergency services or
+                seek immediate care.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="info-strip">
+          <article>
+            <h2 id="infoTitle1">What is a brain tumor?</h2>
+            <p id="infoBody1">
+              A brain tumor is an abnormal growth of cells in the brain or
+              nearby structures. Some tumors are slow-growing and noncancerous;
+              others are cancerous and grow more quickly.
+            </p>
+          </article>
+          <article>
+            <h2 id="infoTitle2">Why types matter</h2>
+            <p id="infoBody2">
+              Tumor type, grade, and location can all change symptoms,
+              treatment, and follow-up needs. Two people with “brain tumors”
+              may have very different care plans.
+            </p>
+          </article>
+          <article>
+            <h2 id="infoTitle3">What doctors use to decide</h2>
+            <p id="infoBody3">
+              MRI findings, surgery or biopsy results, tumor genetics, symptoms,
+              and a patient’s overall health all help guide treatment choices.
+            </p>
+          </article>
+        </section>
+
+        <section id="tumor-directory" class="directory">
+          <div class="section-heading">
+            <p class="eyebrow" id="directoryEyebrow">Tumor directory</p>
+            <h2 id="directoryTitle">Browse different brain tumor diagnoses</h2>
+            <p id="directoryDescription">
+              Start with the search box or use the filter buttons to narrow the
+              list.
+            </p>
+          </div>
+
+          <div class="controls">
+            <label class="search-field">
+              <span class="sr-only">Search tumor types</span>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search by tumor name, symptom, treatment, or grade"
+              />
+            </label>
+
+            <div class="filters" id="filterGroup" aria-label="Tumor filters">
+              <button class="chip active" data-filter="all">All</button>
+              <button class="chip" data-filter="common">Common</button>
+              <button class="chip" data-filter="usually-benign">
+                Usually benign
+              </button>
+              <button class="chip" data-filter="cancerous">
+                Often cancerous
+              </button>
+              <button class="chip" data-filter="adult">Often in adults</button>
+              <button class="chip" data-filter="pediatric">
+                Often in children
+              </button>
+            </div>
+          </div>
+
+          <div id="resultsMeta" class="results-meta" aria-live="polite"></div>
+          <div id="cardGrid" class="card-grid"></div>
+        </section>
+
+        <section id="care-guide" class="care-guide">
+          <div class="section-heading">
+            <p class="eyebrow" id="careEyebrow">Care guide</p>
+            <h2 id="careTitle">Helpful questions for a clinic visit</h2>
+          </div>
+
+          <div id="questionGrid" class="question-grid"></div>
+        </section>
+
+        <section class="sources">
+          <div class="section-heading">
+            <p class="eyebrow" id="sourcesEyebrow">Sources</p>
+            <h2 id="sourcesTitle">Medical references used in this starter app</h2>
+            <p id="sourcesDescription">
+              Content was summarized from patient-facing or government medical
+              sources and rewritten for readability.
+            </p>
+          </div>
+
+          <ul id="sourceList" class="source-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <template id="questionCardTemplate">
+      <article class="question-card">
+        <h3 class="question-title"></h3>
+        <ul class="question-items"></ul>
+      </article>
+    </template>
+
+    <template id="tumorCardTemplate">
+      <article class="tumor-card">
+        <div class="card-top">
+          <div>
+            <p class="card-label"></p>
+            <h3 class="card-title"></h3>
+          </div>
+          <span class="card-grade"></span>
+        </div>
+        <p class="card-summary"></p>
+        <dl class="detail-list">
+          <div>
+            <dt>Common symptoms</dt>
+            <dd class="card-symptoms"></dd>
+          </div>
+          <div>
+            <dt>How it is diagnosed</dt>
+            <dd class="card-diagnosis"></dd>
+          </div>
+          <div>
+            <dt>Common treatment options</dt>
+            <dd class="card-treatment"></dd>
+          </div>
+          <div>
+            <dt>What patients may want to ask</dt>
+            <dd class="card-questions"></dd>
+          </div>
+        </dl>
+        <div class="tag-row"></div>
+      </article>
+    </template>
+
+    <template id="sourceItemTemplate">
+      <li><a target="_blank" rel="noreferrer"></a></li>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
