@@ -121,37 +121,32 @@ collections:
   - name: "tumors"
     label: "Tumor Types"
     label_singular: "Tumor Type"
-    files:
-      - name: "tumors"
-        label: "Tumor Directory"
-        file: "content/tumors.json"
-        format: "json"
-        fields:
-          - label: "Tumor Entries"
-            name: "tumors"
-            widget: "list"
-            summary: "{{fields.name}}"
-            hint: "Each entry becomes one tumor card on the patient-facing website."
-            fields:
-              - { label: "Tumor Name", name: "name", widget: "string", hint: "Example: Meningioma" }
-              - { label: "Short Subtitle", name: "subtitle", widget: "string", hint: "One-line description shown above the tumor name." }
-              - { label: "Grade Label", name: "grade", widget: "string", hint: "Example: Often grade 1 or Grade 4" }
-              - { label: "Plain-Language Summary", name: "summary", widget: "text", hint: "Short overview written for patients and families." }
-              - { label: "Common Symptoms", name: "symptoms", widget: "text", hint: "List the most common symptoms in one readable sentence." }
-              - { label: "How It Is Diagnosed", name: "diagnosis", widget: "text" }
-              - { label: "Common Treatment Options", name: "treatment", widget: "text" }
-              - { label: "Questions Patients May Want To Ask", name: "questions", widget: "text" }
-              - label: "Tags For Filters"
-                name: "tags"
-                widget: "list"
-                hint: "Choose tags that control which filter buttons this tumor appears under."
-                field:
-                  label: "Tag"
-                  name: "tag"
-                  widget: "select"
-                  options:
-                    - { label: "Common", value: "common" }
-                    - { label: "Usually benign", value: "usually-benign" }
-                    - { label: "Often cancerous", value: "cancerous" }
-                    - { label: "Often in adults", value: "adult" }
-                    - { label: "Often in children", value: "pediatric" }
+    folder: "content/tumors"
+    create: false
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
+    summary: "{{name}}"
+    fields:
+      - { label: "Tumor Name", name: "name", widget: "string", hint: "Example: Meningioma" }
+      - { label: "Short Subtitle", name: "subtitle", widget: "string", hint: "One-line description shown above the tumor name." }
+      - { label: "Grade Label", name: "grade", widget: "string", hint: "Example: Often grade 1 or Grade 4" }
+      - { label: "Plain-Language Summary", name: "summary", widget: "text", hint: "Short overview written for patients and families." }
+      - { label: "Common Symptoms", name: "symptoms", widget: "text", hint: "List the most common symptoms in one readable sentence." }
+      - { label: "How It Is Diagnosed", name: "diagnosis", widget: "text" }
+      - { label: "Common Treatment Options", name: "treatment", widget: "text" }
+      - { label: "Questions Patients May Want To Ask", name: "questions", widget: "text" }
+      - label: "Tags For Filters"
+        name: "tags"
+        widget: "list"
+        hint: "Choose tags that control which filter buttons this tumor appears under."
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "select"
+          options:
+            - { label: "Common", value: "common" }
+            - { label: "Usually benign", value: "usually-benign" }
+            - { label: "Often cancerous", value: "cancerous" }
+            - { label: "Often in adults", value: "adult" }
+            - { label: "Often in children", value: "pediatric" }
