@@ -2,7 +2,6 @@
   "files": [
     "meningioma.json",
     "glioblastoma.json",
-    "astrocytoma.json",
-    
+    "astrocytoma.json"
   ]
 }
