@@ -1,0 +1,157 @@
+# Replace the backend settings below once the site is connected to your
+# Git provider and deployed. This starter config is designed for Netlify.
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - name: "site"
+        label: "Homepage Content"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Top of Page"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            hint: "This content appears in the first section patients see when they land on the website."
+            fields:
+              - label: "Small Label Above Title"
+                name: "eyebrow"
+                widget: "string"
+                hint: "Short phrase above the main headline."
+              - label: "Main Headline"
+                name: "title"
+                widget: "string"
+                hint: "Keep this clear and reassuring."
+              - label: "Intro Paragraph"
+                name: "description"
+                widget: "text"
+                hint: "Plain-language introduction for patients and families."
+              - label: "Primary Button"
+                name: "primaryCta"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Button Text", name: "label", widget: "string" }
+                  - { label: "Button Link", name: "href", widget: "string", hint: "For sections on the same page, use links like #tumor-directory." }
+              - label: "Secondary Button"
+                name: "secondaryCta"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Button Text", name: "label", widget: "string" }
+                  - { label: "Button Link", name: "href", widget: "string", hint: "For sections on the same page, use links like #care-guide." }
+              - label: "Focus Card"
+                name: "focusCard"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Small Label", name: "label", widget: "string" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Card Description", name: "description", widget: "text" }
+              - label: "Urgent Help Card"
+                name: "urgentCard"
+                widget: "object"
+                collapsed: true
+                hint: "Use for emergency warning language. Keep this medically conservative and easy to understand."
+                fields:
+                  - { label: "Small Label", name: "label", widget: "string" }
+                  - { label: "Warning Title", name: "title", widget: "string" }
+                  - { label: "Warning Description", name: "description", widget: "text" }
+          - label: "Three Intro Cards"
+            name: "infoStrip"
+            widget: "list"
+            summary: "{{fields.title}}"
+            hint: "These are the three short educational cards below the hero section."
+            fields:
+              - { label: "Card Title", name: "title", widget: "string" }
+              - { label: "Card Text", name: "body", widget: "text" }
+          - label: "Tumor Directory Section"
+            name: "directory"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small Label", name: "eyebrow", widget: "string" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Section Description", name: "description", widget: "text" }
+          - label: "Doctor Visit Questions"
+            name: "careGuide"
+            widget: "object"
+            hint: "These are grouped lists of suggested questions patients can bring to a clinic visit."
+            fields:
+              - { label: "Small Label", name: "eyebrow", widget: "string" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - label: "Question Groups"
+                name: "groups"
+                widget: "list"
+                summary: "{{fields.title}}"
+                hint: "Each group becomes one card on the page."
+                fields:
+                  - { label: "Group Heading", name: "title", widget: "string" }
+                  - label: "Questions"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Question", name: "question", widget: "string", hint: "Write each question in plain language." }
+          - label: "Source Links"
+            name: "sources"
+            widget: "object"
+            collapsed: true
+            hint: "These links are shown publicly so patients can review trusted sources."
+            fields:
+              - { label: "Small Label", name: "eyebrow", widget: "string" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Section Description", name: "description", widget: "text" }
+              - label: "Source Links"
+                name: "links"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Visible Link Label", name: "label", widget: "string" }
+                  - { label: "Website Address", name: "url", widget: "string" }
+
+  - name: "tumors"
+    label: "Tumor Types"
+    label_singular: "Tumor Type"
+    files:
+      - name: "tumors"
+        label: "Tumor Directory"
+        file: "content/tumors.json"
+        format: "json"
+        fields:
+          - label: "Tumor Entries"
+            name: "tumors"
+            widget: "list"
+            summary: "{{fields.name}}"
+            hint: "Each entry becomes one tumor card on the patient-facing website."
+            fields:
+              - { label: "Tumor Name", name: "name", widget: "string", hint: "Example: Meningioma" }
+              - { label: "Short Subtitle", name: "subtitle", widget: "string", hint: "One-line description shown above the tumor name." }
+              - { label: "Grade Label", name: "grade", widget: "string", hint: "Example: Often grade 1 or Grade 4" }
+              - { label: "Plain-Language Summary", name: "summary", widget: "text", hint: "Short overview written for patients and families." }
+              - { label: "Common Symptoms", name: "symptoms", widget: "text", hint: "List the most common symptoms in one readable sentence." }
+              - { label: "How It Is Diagnosed", name: "diagnosis", widget: "text" }
+              - { label: "Common Treatment Options", name: "treatment", widget: "text" }
+              - { label: "Questions Patients May Want To Ask", name: "questions", widget: "text" }
+              - label: "Tags For Filters"
+                name: "tags"
+                widget: "list"
+                hint: "Choose tags that control which filter buttons this tumor appears under."
+                field:
+                  label: "Tag"
+                  name: "tag"
+                  widget: "select"
+                  options:
+                    - { label: "Common", value: "common" }
+                    - { label: "Usually benign", value: "usually-benign" }
+                    - { label: "Often cancerous", value: "cancerous" }
+                    - { label: "Often in adults", value: "adult" }
+                    - { label: "Often in children", value: "pediatric" }
