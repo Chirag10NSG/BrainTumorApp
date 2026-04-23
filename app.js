@@ -178,13 +178,33 @@ async function loadContent() {
       fetch("./content/tumors.json")
     ]);
 
-    if (!siteResponse.ok || !tumorsResponse.ok) {
-      throw new Error("Content files could not be loaded.");
+    if (!siteResponse.ok) {
+      throw new Error("Site content could not be loaded.");
     }
 
     const siteContent = await siteResponse.json();
-    const tumorsContent = await tumorsResponse.json();
-    tumors = Array.isArray(tumorsContent) ? tumorsContent : tumorsContent.tumors || [];
+    let tumorsContent;
+
+    if (tumorsResponse.ok) {
+      tumorsContent = await tumorsResponse.json();
+      tumors = Array.isArray(tumorsContent) ? tumorsContent : tumorsContent.tumors || [];
+    } else {
+      const tumorIndexResponse = await fetch("./content/tumors/index.json");
+      if (!tumorIndexResponse.ok) {
+        throw new Error("Tumor content could not be loaded.");
+      }
+
+      const tumorIndex = await tumorIndexResponse.json();
+      const tumorResponses = await Promise.all(
+        tumorIndex.files.map((file) => fetch(`./content/tumors/${file}`))
+      );
+
+      if (tumorResponses.some((response) => !response.ok)) {
+        throw new Error("One or more tumor files could not be loaded.");
+      }
+
+      tumors = await Promise.all(tumorResponses.map((response) => response.json()));
+    }
 
     applySiteContent(siteContent);
     renderCards();
