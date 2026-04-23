@@ -1,0 +1,11 @@
+{
+  "name": "Glioblastoma",
+  "subtitle": "A fast-growing grade 4 astrocytic tumor",
+  "grade": "Grade 4",
+  "summary": "Glioblastoma is an aggressive brain tumor that usually occurs in adults and often needs treatment quickly after diagnosis.",
+  "symptoms": "Headaches, seizures, confusion, weakness, speech trouble, or personality changes depending on location.",
+  "diagnosis": "MRI plus surgery or biopsy for pathology confirmation. Molecular testing may also help guide care.",
+  "treatment": "Surgery when possible, followed by radiation, chemotherapy, and sometimes clinical trials.",
+  "questions": "How much tumor was removed? What is the treatment goal now? Are clinical trials or supportive care services a fit?",
+  "tags": ["common", "cancerous", "adult"]
+}
