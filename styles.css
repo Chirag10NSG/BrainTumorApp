@@ -1,7 +1,7 @@
 :root {
-  --bg: #f3f7fc;
-  --bg-panel: rgba(250, 252, 255, 0.88);
-  --surface: #f9fbff;
+  --bg: #E3F2FD;
+  --bg-panel: rgba(255, 255, 255, 0.88);
+  --surface: #fafdff;
   --surface-strong: #ffffff;
   --ink: #1f2430;
   --muted: #5b6472;
@@ -11,7 +11,7 @@
   --accent-soft: #dbe8f8;
   --teal: #2b6cb0;
   --teal-soft: #e3eefb;
-  --shadow: 0 20px 60px rgba(26, 75, 143, 0.12);
+  --shadow: 0 20px 60px rgba(26, 75, 143, 0.10);
   --radius-xl: 28px;
   --radius-lg: 22px;
   --radius-md: 16px;
@@ -31,10 +31,11 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(26, 75, 143, 0.12), transparent 28%),
-    radial-gradient(circle at 80% 10%, rgba(43, 108, 176, 0.14), transparent 22%),
-    linear-gradient(180deg, #f4f8fc 0%, #eef4fb 34%, #f7fbff 100%);
+    radial-gradient(circle at top left, rgba(26, 75, 143, 0.08), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(43, 108, 176, 0.08), transparent 22%),
+    linear-gradient(180deg, #eef7fe 0%, #E3F2FD 40%, #edf7ff 100%);
 }
+
 
 .page-shell {
   width: min(1180px, calc(100% - 32px));
