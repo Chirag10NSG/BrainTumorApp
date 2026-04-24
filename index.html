@@ -4,15 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brain Tumor Guide</title>
-    <script>
-      const authTokens = ["invite_token", "confirmation_token", "recovery_token"];
-      const hash = window.location.hash || "";
-      const shouldRedirectToAdmin = authTokens.some((token) => hash.includes(token + "="));
-
-      if (shouldRedirectToAdmin && !window.location.pathname.startsWith("/admin")) {
-        window.location.replace("/admin/" + hash);
-      }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
