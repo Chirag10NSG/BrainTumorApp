@@ -68,15 +68,11 @@ content:
               - name: description
                 label: Warning Description
                 type: text
+
       - name: infoStrip
         label: Three Intro Cards
         type: object
-        list:
-          min: 3
-          max: 3
-          collapsible:
-            collapsed: false
-            summary: "{title}"
+        list: true
         fields:
           - name: title
             label: Card Title
@@ -84,6 +80,7 @@ content:
           - name: body
             label: Card Text
             type: text
+
       - name: directory
         label: Tumor Directory Section
         type: object
@@ -97,6 +94,7 @@ content:
           - name: description
             label: Section Description
             type: text
+
       - name: careGuide
         label: Doctor Visit Questions
         type: object
@@ -110,10 +108,7 @@ content:
           - name: groups
             label: Question Groups
             type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{title}"
+            list: true
             fields:
               - name: title
                 label: Group Heading
@@ -122,6 +117,7 @@ content:
                 label: Questions
                 type: string
                 list: true
+
       - name: sources
         label: Source Links
         type: object
@@ -138,10 +134,7 @@ content:
           - name: links
             label: Source Links
             type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{label}"
+            list: true
             fields:
               - name: label
                 label: Visible Link Label
@@ -184,8 +177,8 @@ content:
       - name: tags
         label: Tags For Filters
         type: select
-        list: true
         options:
+          multiple: true
           values:
             - value: common
               label: Common
