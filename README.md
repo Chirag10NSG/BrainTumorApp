@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/27033444/README.md)
 # Brain Tumor Guide
 
 A small patient-friendly starter web app for learning about different brain tumor types.
@@ -25,7 +26,7 @@ Then open `http://localhost:8000`.
 - `styles.css` - visual design and responsive layout
 - `app.js` - dynamic rendering and search/filter behavior
 - `content/site.json` - editable site copy and source links
-- `content/tumors.json` - editable tumor entries
+- `content/tumors.json` - editable tumor entries managed through the CMS
 - `admin/` - Decap CMS admin interface
 
 ## Clinician editing setup
