@@ -47,6 +47,14 @@
   {
     "name": "Acoustic Neuroma",
     "subtitle": "Acoustic Neuroma",
-    "grade": "Benign, Grade 1"
+    "grade": "Benign, Grade 1",
+    "summary": "comes from the 8th ",
+    "symptoms": "one sided hearing loss",
+    "diagnosis": "MRI",
+    "treatment": "surgery or radiosurgery",
+    "questions": "Which treatment is best for me",
+    "tags": [
+      "usually-benign"
+    ]
   }
 ]
