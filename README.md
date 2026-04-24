@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/27033444/README.md)
+[README.md](https://github.com/user-attachments/files/27035287/README.md)
 # Brain Tumor Guide
 
 A small patient-friendly starter web app for learning about different brain tumor types.
@@ -29,16 +29,18 @@ Then open `http://localhost:8000`.
 - `content/tumors.json` - editable tumor entries managed through the CMS
 - `admin/` - Decap CMS admin interface
 
-## Clinician editing setup
+## GitHub Pages and CMS setup
 
-The site now includes a basic Decap CMS configuration so clinicians can edit content through `/admin`.
+This project can be hosted as a static site on GitHub Pages.
 
-Before that works on a real site, you still need to:
+Content editing is configured through Pages CMS using the root `.pages.yml` file. Editors sign in with GitHub at `https://pagescms.org` and Pages CMS reads the repository configuration directly.
 
-1. Put the project in a GitHub repository.
-2. Deploy it to Netlify.
-3. Enable Netlify Identity and Git Gateway, or switch the Decap backend to GitHub in `admin/config.yml`.
-4. Invite clinician editors.
+Main editable files:
+
+- `content/site.json` - site-wide copy and links
+- `content/tumors.json` - tumor entries shown in the directory
+
+The old `admin/` folder is now just a pointer page for editors and is no longer a live Netlify CMS app.
 
 Once deployed, clinicians can edit:
 
