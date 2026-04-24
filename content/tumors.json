@@ -2,8 +2,8 @@
   {
     "name": "Meningioma",
     "subtitle": "Usually starts in the lining around the brain or spinal cord",
-    "grade": "Often grade 1 but can be atypical or malignant ",
-    "summary": "Meningiomas are among the most common primary brain tumors. Many are slow-growing, though higher-grade meningiomas can behave more aggressively.",
+    "grade": "Often grade 1",
+    "summary": "Meningiomas are among the most common primary brain tumors. Many are slow-growing, though higher-grade meningiomas can behave more aggressively. They arise from the meninges  the covering of the brain",
     "symptoms": "Headaches, seizures, weakness, vision changes, or no symptoms if found incidentally.",
     "diagnosis": "MRI is commonly used first. If surgery is done, pathology helps confirm the exact grade.",
     "treatment": "Observation for some tumors, surgery, focused radiation, or radiation after surgery when needed.",
