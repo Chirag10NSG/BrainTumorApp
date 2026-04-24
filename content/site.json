@@ -1,7 +1,7 @@
 {
   "hero": {
     "eyebrow": "Patient-friendly education",
-    "title": "Understand different brain tumors made simple.",
+    "title": "Understanding brain tumors made simple.",
     "description": "This starter app helps patients and families explore common brain tumor diagnoses, symptoms, diagnosis, and treatment pathways. It is educational only and should be used alongside advice from your care team.",
     "primaryCta": {
       "label": "Explore tumor types",
