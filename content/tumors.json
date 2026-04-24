@@ -8,7 +8,11 @@
     "diagnosis": "MRI is commonly used first. If surgery is done, pathology helps confirm the exact grade.",
     "treatment": "Observation for some tumors, surgery, focused radiation, or radiation after surgery when needed.",
     "questions": "Is this tumor pressing on nearby brain tissue? What grade is it? Is monitoring safe, or is treatment recommended now?",
-    "tags": ["common", "usually-benign", "adult"]
+    "tags": [
+      "common",
+      "usually-benign",
+      "adult"
+    ]
   },
   {
     "name": "Glioblastoma",
@@ -19,7 +23,11 @@
     "diagnosis": "MRI plus surgery or biopsy for pathology confirmation. Molecular testing may also help guide care.",
     "treatment": "Surgery when possible, followed by radiation, chemotherapy, and sometimes clinical trials.",
     "questions": "How much tumor was removed? What is the treatment goal now? Are clinical trials or supportive care services a fit?",
-    "tags": ["common", "cancerous", "adult"]
+    "tags": [
+      "common",
+      "cancerous",
+      "adult"
+    ]
   },
   {
     "name": "Astrocytoma",
@@ -30,6 +38,15 @@
     "diagnosis": "MRI followed by biopsy or surgery to identify the grade and tumor features.",
     "treatment": "Surgery, monitoring, radiation, chemotherapy, or a combination depending on grade and symptoms.",
     "questions": "What grade is this astrocytoma? Is it considered low grade or high grade? What does that mean for treatment timing?",
-    "tags": ["cancerous", "adult", "pediatric"]
+    "tags": [
+      "cancerous",
+      "adult",
+      "pediatric"
+    ]
+  },
+  {
+    "name": "Acoustic Neuroma",
+    "subtitle": "Acoustic Neuroma",
+    "grade": "Benign, Grade 1"
   }
 ]
