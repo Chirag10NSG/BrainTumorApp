@@ -177,10 +177,9 @@ function renderCards() {
   filteredTumors.forEach((tumor) => {
     const fragment = template.content.cloneNode(true);
     const detailUrl = getTumorDetailUrl(tumor);
+  fragment.querySelector(".card-link-overlay").href = detailUrl;
+  fragment.querySelector(".card-link-overlay").setAttribute("aria-label", `View details for ${tumor.name}`);
 
-    fragment.querySelector(".card-link-overlay").href = detailUrl;
-    fragment
-      .querySelector(".card-link-overlay")
       .setAttribute("aria-label", `View details for ${tumor.name}`);
     fragment.querySelector(".card-label").textContent = tumor.subtitle;
     fragment.querySelector(".card-title").textContent = tumor.name;
@@ -198,8 +197,8 @@ function renderCards() {
       pill.textContent = tag.replace("-", " ");
       tagRow.appendChild(pill);
     });
-
-    fragment.querySelector(".card-detail-link").href = detailUrl;
+  
+  fragment.querySelector(".card-detail-link").href = detailUrl;
 
     cardGrid.appendChild(fragment);
   });
@@ -259,7 +258,7 @@ async function loadContent() {
       );
     }
 
-    applySiteContent(siteContent);
+         applySiteContent(siteContent);
     renderCards();
   } catch (error) {
     resultsMeta.textContent =
@@ -268,3 +267,4 @@ async function loadContent() {
 }
 
 loadContent();
+
