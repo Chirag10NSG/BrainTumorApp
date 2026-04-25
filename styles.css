@@ -428,9 +428,12 @@ main {
   .hero-grid,
   .info-strip,
   .card-grid,
-  .question-grid {
+  .question-grid,
+  .detail-grid {
     grid-template-columns: 1fr;
   }
+}
+
 
   .hero-copy h1 {
     max-width: 14ch;
@@ -438,20 +441,30 @@ main {
 }
 
 @media (max-width: 640px) {
-  .page-shell {
-    width: min(100% - 20px, 1180px);
-    padding-top: 12px;
-  }
-
   .hero,
   .directory,
   .care-guide,
   .sources,
   .info-strip article,
   .tumor-card,
-  .question-card {
+  .question-card,
+  .detail-shell,
+  .detail-section,
+  .detail-empty {
     border-radius: 22px;
   }
+
+  .card-top,
+  .detail-hero,
+  .card-footer {
+    flex-direction: column;
+  }
+
+  .card-detail-link {
+    width: 100%;
+  }
+}
+
 
   .hero {
     padding: 18px;
@@ -475,4 +488,103 @@ main {
   .card-top {
     flex-direction: column;
   }
+}
+.tumor-card {
+  position: relative;
+}
+
+.card-link-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.card-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.card-footer .tag-row {
+  flex: 1;
+}
+
+.card-detail-link {
+  flex-shrink: 0;
+}
+
+.detail-shell {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 36px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 255, 0.9));
+  box-shadow: var(--shadow);
+}
+
+.detail-nav {
+  margin-bottom: 24px;
+}
+
+.detail-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+}
+
+.detail-hero h1,
+.detail-section h2 {
+  font-family: "Fraunces", serif;
+}
+
+.detail-hero h1 {
+  margin: 10px 0 14px;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.98;
+}
+
+.detail-grade {
+  margin-top: 8px;
+}
+
+.detail-tag-row {
+  margin: 22px 0 28px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.detail-section,
+.detail-empty {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+}
+
+.detail-section {
+  padding: 22px;
+}
+
+.detail-section h2 {
+  margin: 0 0 10px;
+  font-size: 1.55rem;
+}
+
+.detail-section p,
+.detail-empty p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.detail-empty {
+  padding: 28px;
 }
