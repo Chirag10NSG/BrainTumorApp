@@ -161,36 +161,40 @@
     </template>
 
     <template id="tumorCardTemplate">
-      <article class="tumor-card">
-        <div class="card-top">
-          <div>
-            <p class="card-label"></p>
-            <h3 class="card-title"></h3>
-          </div>
-          <span class="card-grade"></span>
-        </div>
-        <p class="card-summary"></p>
-        <dl class="detail-list">
-          <div>
-            <dt>Common symptoms</dt>
-            <dd class="card-symptoms"></dd>
-          </div>
-          <div>
-            <dt>How it is diagnosed</dt>
-            <dd class="card-diagnosis"></dd>
-          </div>
-          <div>
-            <dt>Common treatment options</dt>
-            <dd class="card-treatment"></dd>
-          </div>
-          <div>
-            <dt>What patients may want to ask</dt>
-            <dd class="card-questions"></dd>
-          </div>
-        </dl>
-        <div class="tag-row"></div>
-      </article>
-    </template>
+  <article class="tumor-card">
+    <a class="card-link-overlay" href="#"></a>
+    <div class="card-top">
+      <div>
+        <p class="card-label"></p>
+        <h3 class="card-title"></h3>
+      </div>
+      <span class="card-grade"></span>
+    </div>
+    <p class="card-summary"></p>
+    <dl class="detail-list">
+      <div>
+        <dt>Common symptoms</dt>
+        <dd class="card-symptoms"></dd>
+      </div>
+      <div>
+        <dt>How it is diagnosed</dt>
+        <dd class="card-diagnosis"></dd>
+      </div>
+      <div>
+        <dt>Common treatment options</dt>
+        <dd class="card-treatment"></dd>
+      </div>
+      <div>
+        <dt>What patients may want to ask</dt>
+        <dd class="card-questions"></dd>
+      </div>
+    </dl>
+    <div class="card-footer">
+      <div class="tag-row"></div>
+      <a class="button button-secondary card-detail-link" href="#">View details</a>
+    </div>
+  </article>
+</template>
 
     <template id="sourceItemTemplate">
       <li><a target="_blank" rel="noreferrer"></a></li>
