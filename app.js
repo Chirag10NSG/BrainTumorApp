@@ -11,6 +11,48 @@ const sourceTemplate = document.querySelector("#sourceItemTemplate");
 let currentFilter = "all";
 let tumors = [];
 
+function createSlug(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function getTumorDetailUrl(tumor) {
+  return `./tumor.html?slug=${encodeURIComponent(tumor.slug)}`;
+}
+
+function normalizeTags(tags) {
+  if (Array.isArray(tags)) {
+    return tags.filter(Boolean).map((tag) => String(tag).trim()).filter(Boolean);
+  }
+
+  if (typeof tags === "string") {
+    return tags
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter(Boolean);
+  }
+
+  return [];
+}
+
+function normalizeTumor(tumor) {
+  return {
+    name: tumor.name || "Untitled tumor",
+    slug: createSlug(tumor.slug || tumor.name || "untitled-tumor"),
+    subtitle: tumor.subtitle || "",
+    grade: tumor.grade || "",
+    summary: tumor.summary || "",
+    symptoms: tumor.symptoms || "",
+    diagnosis: tumor.diagnosis || "",
+    treatment: tumor.treatment || "",
+    questions: tumor.questions || "",
+    tags: normalizeTags(tumor.tags)
+  };
+}
+
 function matchesSearch(tumor, term) {
   if (!term) return true;
   const haystack = [
@@ -134,7 +176,12 @@ function renderCards() {
 
   filteredTumors.forEach((tumor) => {
     const fragment = template.content.cloneNode(true);
+    const detailUrl = getTumorDetailUrl(tumor);
 
+    fragment.querySelector(".card-link-overlay").href = detailUrl;
+    fragment
+      .querySelector(".card-link-overlay")
+      .setAttribute("aria-label", `View details for ${tumor.name}`);
     fragment.querySelector(".card-label").textContent = tumor.subtitle;
     fragment.querySelector(".card-title").textContent = tumor.name;
     fragment.querySelector(".card-grade").textContent = tumor.grade;
@@ -151,6 +198,8 @@ function renderCards() {
       pill.textContent = tag.replace("-", " ");
       tagRow.appendChild(pill);
     });
+
+    fragment.querySelector(".card-detail-link").href = detailUrl;
 
     cardGrid.appendChild(fragment);
   });
@@ -187,7 +236,9 @@ async function loadContent() {
 
     if (tumorsResponse.ok) {
       tumorsContent = await tumorsResponse.json();
-      tumors = Array.isArray(tumorsContent) ? tumorsContent : tumorsContent.tumors || [];
+      tumors = (Array.isArray(tumorsContent) ? tumorsContent : tumorsContent.tumors || []).map(
+        normalizeTumor
+      );
     } else {
       const tumorIndexResponse = await fetch("./content/tumors/index.json");
       if (!tumorIndexResponse.ok) {
@@ -203,7 +254,9 @@ async function loadContent() {
         throw new Error("One or more tumor files could not be loaded.");
       }
 
-      tumors = await Promise.all(tumorResponses.map((response) => response.json()));
+      tumors = (await Promise.all(tumorResponses.map((response) => response.json()))).map(
+        normalizeTumor
+      );
     }
 
     applySiteContent(siteContent);
