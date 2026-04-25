@@ -40,6 +40,13 @@ content:
       - name: questions
         label: Questions Patients May Want To Ask
         type: text
+      - name: videoTitle
+        label: Video Title
+        type: string
+      - name: youtubeUrl
+        label: YouTube URL
+        type: string
+
       - name: tags
         label: Tags For Filters
         type: select
