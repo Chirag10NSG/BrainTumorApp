@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main id="detailContainer">
+        <section class="detail-shell">
+          <nav class="detail-nav">
+            <a class="button button-secondary" href="./index.html#tumor-directory">Back to directory</a>
+          </nav>
+
+          <header class="detail-hero">
+            <div>
+              <p class="eyebrow" id="detailLabel">Tumor type</p>
+              <h1 id="detailTitle">Loading tumor details...</h1>
+              <p class="hero-text" id="detailSummary"></p>
+            </div>
+            <span class="card-grade detail-grade" id="detailGrade"></span>
+          </header>
+
+          <div class="tag-row detail-tag-row" id="detailTagRow"></div>
+
+          <section class="detail-section video-section" id="videoSection" hidden>
+            <div class="video-heading">
+              <p class="eyebrow">Video guide</p>
+              <h2 id="videoTitle">Watch explanation</h2>
+            </div>
+            <div class="video-frame-shell">
+              <iframe
+                id="videoFrame"
+                src=""
+                title="Tumor video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </section>
+
+          <section class="detail-grid">
+            <article class="detail-section">
+              <h2>Common symptoms</h2>
+              <p id="detailSymptoms"></p>
+            </article>
+            <article class="detail-section">
+              <h2>How it is diagnosed</h2>
+              <p id="detailDiagnosis"></p>
+            </article>
+            <article class="detail-section">
+              <h2>Common treatment options</h2>
+              <p id="detailTreatment"></p>
+            </article>
+            <article class="detail-section">
+              <h2>What patients may want to ask</h2>
+              <p id="detailQuestions"></p>
+            </article>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./tumor-detail.js"></script>
+  </body>
+</html>
