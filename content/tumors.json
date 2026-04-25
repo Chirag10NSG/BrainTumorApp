@@ -8,9 +8,6 @@
     "diagnosis": "MRI is commonly used first. If surgery is done, pathology helps confirm the exact grade.",
     "treatment": "Observation for some tumors, surgery, focused radiation, or radiation after surgery when needed.",
     "questions": "Is this tumor pressing on nearby brain tissue? What grade is it? Is monitoring safe, or is treatment recommended now?",
-    "videoTitle": "",
-    "youtubeUrl": "",
-
     "tags": [
       "common",
       "usually-benign",
@@ -26,9 +23,8 @@
     "diagnosis": "MRI plus surgery or biopsy for pathology confirmation. Molecular testing may also help guide care.",
     "treatment": "Surgery when possible, followed by radiation, chemotherapy, and sometimes clinical trials.",
     "questions": "How much tumor was removed? What is the treatment goal now? Are clinical trials or supportive care services a fit?",
-    "videoTitle": "",
-    "youtubeUrl": "",
-
+    "videoTitle": "Technique For Meningioma Resection",
+    "youtubeUrl": "https://youtube.com/shorts/Z72OWNPGjvA?si=70kabPEtgGvEr1PD",
     "tags": [
       "common",
       "cancerous",
@@ -44,9 +40,6 @@
     "diagnosis": "MRI followed by biopsy or surgery to identify the grade and tumor features.",
     "treatment": "Surgery, monitoring, radiation, chemotherapy, or a combination depending on grade and symptoms.",
     "questions": "What grade is this astrocytoma? Is it considered low grade or high grade? What does that mean for treatment timing?",
-    "videoTitle": "",
-    "youtubeUrl": "",
-
     "tags": [
       "cancerous",
       "adult",
@@ -62,9 +55,6 @@
     "diagnosis": "MRI",
     "treatment": "Most common options are Surgical Resection and Radiosurgery (focused radiation). Small tumors can also be followed with serial MRIs",
     "questions": "Which treatment is best for me. Serial Imaging vs Surgery vs Radiosurgery. What are the risks and benefits of each approach.",
-    "videoTitle": "",
-    "youtubeUrl": "",
-
     "tags": [
       "usually-benign",
       "adult"
