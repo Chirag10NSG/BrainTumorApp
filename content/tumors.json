@@ -48,13 +48,14 @@
     "name": "Acoustic Neuroma",
     "subtitle": "Acoustic Neuroma",
     "grade": "Benign, Grade 1",
-    "summary": "comes from the 8th ",
-    "symptoms": "one sided hearing loss",
+    "summary": "Arises from the 8th cranial nerve and affects primarily hearing on one side. ",
+    "symptoms": "One sided hearing loss, Tinnitus (ringing in the ears), balance problems",
     "diagnosis": "MRI",
-    "treatment": "surgery or radiosurgery",
-    "questions": "Which treatment is best for me",
+    "treatment": "Most common options are Surgical Resection and Radiosurgery (focused radiation). Small tumors can also be followed with serial MRIs",
+    "questions": "Which treatment is best for me. Serial Imaging vs Surgery vs Radiosurgery. What are the risks and benefits of each approach.",
     "tags": [
-      "usually-benign"
+      "usually-benign",
+      "adult"
     ]
   }
 ]
